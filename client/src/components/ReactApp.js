@@ -10,7 +10,7 @@ export default class ReactApp extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <Link to="/hello" className="App-link">
+          <Link to="/login" className="App-link">
             Next Page
           </Link>
         </header>

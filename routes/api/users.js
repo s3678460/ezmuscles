@@ -11,6 +11,15 @@ const User = require('../../models/User');
 const validateRegisterInput = require ('../../validation/register');
 const validateLoginInput = require ('../../validation/login');
 
+// @route  GET api/users
+// @desc   GET ALL USERS
+// @access Public
+router.get("/", (req,res)=>{
+    User.find()
+    .then(users => res.json(users))
+})
+
+
 // @route  GET api/users/test
 // @desc   Tests users route
 // @access Public

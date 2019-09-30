@@ -1,0 +1,28 @@
+.footerpage{
+    padding: 60px 0px 0px 0px;
+}
+.iconsocial .fa{
+    background-color: white;
+    width: 45px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 5px;
+    border-radius: 5%;
+}
+.fa-facebook:hover{
+    background-color: #3B5998;
+}
+.fa-twitter:hover {
+    background: #55ACEE;
+}
+.fa-google-plus:hover {
+    background: #dd4b39;
+}
+.fa-instagram:hover{
+    background-color: #d83074;
+}
+.blocklink a{
+    display: block;
+}
