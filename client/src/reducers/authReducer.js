@@ -1,5 +1,4 @@
 import {SET_CURRENT_USER} from '../actions/types'
-import { isEmptyBindingElement } from 'typescript';
 import isEmpty from '../validation/is-empty'
 
 const initialState = {
