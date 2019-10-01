@@ -95,7 +95,6 @@ responseFacebook = response => {
         return (
             <div>
 
-            {/* This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! */}
             <div className="container">
               <div className="row">
                 <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">

@@ -43,6 +43,14 @@ export const loginUser = (userData) => dispatch => {
     
 };
 
+export const verifyUser = (secretToken,history) => dispatch => {
+    axios.post('/api/users/verify',secretToken)
+    .then(res=>history.push('/login'))
+    .catch(err=>dispatch({
+        type:GET_ERRORS,
+        payload:err.response.data
+    }))
+}
 // Set logged in user
 
 export const setCurrentUser = (decoded) => {

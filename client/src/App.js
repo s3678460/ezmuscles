@@ -13,6 +13,7 @@ import NavBar from "./components/Template/NavBar";
 import Footer from "./components/Template/Footer";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import Verification from "./components/Verification/Verification";
 
 //Check for token
 
@@ -48,6 +49,8 @@ export default class App extends Component {
               <Route exact path="/hello" component={ReactApp2} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/verify" component={Verification} />
+
 
               <Footer />
             </div>
