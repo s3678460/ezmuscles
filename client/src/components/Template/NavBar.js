@@ -83,6 +83,13 @@ class NavBar extends Component {
                 Products
               </a>
             </li>
+            <li className="nav-item">
+              <Link to="/support">
+              <a className="nav-link" href="#">
+                Support
+              </a>
+              </Link>
+            </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"

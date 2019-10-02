@@ -2,10 +2,10 @@ import React, { Component } from "react";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from './store';
-import jwt_decode from 'jwt-decode';
-import setAuthToken from './utils/setAuthToken';
-import {setCurrentUser, logoutUser} from './actions/authAction';
+import store from "./store";
+import jwt_decode from "jwt-decode";
+import setAuthToken from "./utils/setAuthToken";
+import { setCurrentUser, logoutUser } from "./actions/authAction";
 import "./App.css";
 import ReactApp from "./components/ReactApp";
 import ReactApp2 from "./components/ReactApp2";
@@ -14,6 +14,7 @@ import Footer from "./components/Template/Footer";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Verification from "./components/Verification/Verification";
+import Chatbot from "./components/Chatbot/Chatbot"
 
 //Check for token
 
@@ -27,17 +28,18 @@ if (localStorage.jwtToken) {
 
   // Check for expired token
   const currentTime = Date.now() / 1000;
-  if(decoded.exp < currentTime) {
+  if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
     // Clear current profile
     // Redirect to login
 
-    window.location.href = '/login';
+    window.location.href = "/login";
   }
 }
 
 export default class App extends Component {
+ 
   render() {
     return (
       <Provider store={store}>
@@ -50,6 +52,8 @@ export default class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/verify" component={Verification} />
+              <Route exact path="/support" component={Chatbot} />
+
 
 
               <Footer />
