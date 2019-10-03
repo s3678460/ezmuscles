@@ -4,24 +4,24 @@ const Schema = mongoose.Schema;
 // Create Product Schema
 
 const ProductSchema = new Schema({
-    productName:{
+    name:{
         type:String,
         required:true
     },
 
-    productPrice: {
+    price: {
         type:String,
         required:true
     },
-    productCat: {
+    category: {
         type: String,
         required: true,
     },
-    productDesc: {
+    description: {
         type: String,
         required: true,
     },
-    productImage: {
+    imageURL: {
         type: String,
         required: true
     }
