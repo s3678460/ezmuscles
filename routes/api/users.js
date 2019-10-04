@@ -7,6 +7,9 @@ const passport = require("passport");
 const randomstring = require("randomstring");
 const joi = require("joi");
 const mailer = require("../misc/mailer");
+const accountSid = 'AC763cfe4f372695320e25d26cf50f2054';
+const authToken = 'e51aa152e751737be6469783aa81b993';
+const client = require('twilio')(accountSid, authToken);
 
 // Load User Model
 const User = require("../../models/User");
@@ -185,6 +188,21 @@ router.post("/verify", (req, res) => {
       res.json("Verify Successfull");
     }
   });
+});
+
+router.post("/sendsms", (req,res) => {
+  const phoneNumber = req.body.phoneNumber;
+  const discountCode = randomstring.generate(8);
+  
+
+  client.messages.create({
+    body: `This is EzMuscles! Your Discount Code Is: ${discountCode}. Please go to the closest retail store to use it`,
+     from: '+19073181719',
+     to: `+${phoneNumber}`
+  })
+  return res.json("Send Successfull");
+
+
 });
 
 module.exports = router;

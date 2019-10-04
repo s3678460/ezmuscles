@@ -90,6 +90,14 @@ class NavBar extends Component {
               </a>
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link to="/senddiscount">
+              <a className="nav-link" href="#">
+                Get Discount Code
+              </a>
+              </Link>
+            </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -104,6 +112,19 @@ class NavBar extends Component {
               </a>
               {isAuthenticated ? authLinks : guestLinks}
             </li>
+
+            <li className="nav-item">
+            
+
+
+            <Link to="/cart">
+              <a className="nav-link" href="#">
+              <i className="fa fa-shopping-basket" aria-hidden="true"> Your Cart
+            </i>
+              </a>
+              </Link>
+            </li>
+            
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input
@@ -118,6 +139,8 @@ class NavBar extends Component {
             >
               Search
             </button>
+
+
           </form>
         </div>
       </nav>

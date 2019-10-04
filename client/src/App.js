@@ -14,7 +14,10 @@ import Footer from "./components/Template/Footer";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Verification from "./components/Verification/Verification";
-import Chatbot from "./components/Chatbot/Chatbot"
+import Chatbot from "./components/Chatbot/Chatbot";
+import SendDiscountCode from "./components/SendDiscountCode/SendDiscountCode";
+import Cart from "./components/Cart/Cart";
+
 
 //Check for token
 
@@ -53,6 +56,10 @@ export default class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/verify" component={Verification} />
               <Route exact path="/support" component={Chatbot} />
+              <Route exact path="/senddiscount" component={SendDiscountCode} />
+              <Route exact path="/cart" component={Cart} />
+
+
 
 
 

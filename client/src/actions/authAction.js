@@ -51,6 +51,13 @@ export const verifyUser = (secretToken,history) => dispatch => {
         payload:err.response.data
     }))
 }
+
+export const sendSMS = (phoneNumber,history) => dispatch => {
+    axios.post('/api/users/sendsms',phoneNumber)
+    .then(res=>history.push('/'))
+    
+}
+
 // Set logged in user
 
 export const setCurrentUser = (decoded) => {
