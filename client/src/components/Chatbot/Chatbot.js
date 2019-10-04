@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { ChatBot } from "aws-amplify-react";
 
 export default class Chatbot extends Component {
+  
   handleComplete(err, confirmation) {
     if (err) {
       alert("Bot conversation failed");
