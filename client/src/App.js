@@ -8,7 +8,6 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authAction";
 import "./App.css";
 import ReactApp from "./components/ReactApp";
-import ReactApp2 from "./components/ReactApp2";
 import NavBar from "./components/Template/NavBar";
 import Footer from "./components/Template/Footer";
 import Login from "./components/Login/Login";
@@ -51,7 +50,6 @@ export default class App extends Component {
             <NavBar />
             <Route exact path="/" component={ReactApp} />
             <div className="container">
-              <Route exact path="/hello" component={ReactApp2} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/verify" component={Verification} />
