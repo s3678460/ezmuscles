@@ -5,11 +5,9 @@ export default class Chatbot extends Component {
   
   handleComplete(err, confirmation) {
     if (err) {
-      alert("Bot conversation failed");
-      return;
+     
     }
-    alert("Success: " + JSON.stringify(confirmation, null, 2));
-    return "Reservation booked. Thank you! What would you like to do next?";
+  
   }
   render() {
     return (
