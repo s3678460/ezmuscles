@@ -1,21 +1,15 @@
 import React, { Component } from "react";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authAction";
 import "./App.css";
-import ReactApp from "./components/ReactApp";
 import NavBar from "./components/Template/NavBar";
 import Footer from "./components/Template/Footer";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import Verification from "./components/Verification/Verification";
-import Chatbot from "./components/Chatbot/Chatbot";
-import SendDiscountCode from "./components/SendDiscountCode/SendDiscountCode";
-import Cart from "./components/Cart/Cart";
+import RouterURL from "./components/RouterURL/RouterURL";
 
 
 //Check for token
@@ -41,28 +35,17 @@ if (localStorage.jwtToken) {
 }
 
 export default class App extends Component {
- 
+
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
             <NavBar />
-            <Route exact path="/" component={ReactApp} />
             <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/verify" component={Verification} />
-              <Route exact path="/support" component={Chatbot} />
-              <Route exact path="/senddiscount" component={SendDiscountCode} />
-              <Route exact path="/cart" component={Cart} />
-
-
-
-
-
-              <Footer />
+              <RouterURL />
             </div>
+            <Footer />
           </div>
         </Router>
       </Provider>
