@@ -16,6 +16,8 @@ import Verification from "./components/Verification/Verification";
 import Chatbot from "./components/Chatbot/Chatbot";
 import SendDiscountCode from "./components/SendDiscountCode/SendDiscountCode";
 import Cart from "./components/Cart/Cart";
+import AdminPage from "./components/Admin/AdminPage";
+import { UpdateProduct } from "./components/Admin/UpdateProduct";
 
 
 //Check for token
@@ -41,7 +43,7 @@ if (localStorage.jwtToken) {
 }
 
 export default class App extends Component {
- 
+
   render() {
     return (
       <Provider store={store}>
@@ -56,11 +58,8 @@ export default class App extends Component {
               <Route exact path="/support" component={Chatbot} />
               <Route exact path="/senddiscount" component={SendDiscountCode} />
               <Route exact path="/cart" component={Cart} />
-
-
-
-
-
+              <Route exact path="/admin" component={AdminPage} />
+              <Route exact path="/product/:_id" component={UpdateProduct} />
               <Footer />
             </div>
           </div>

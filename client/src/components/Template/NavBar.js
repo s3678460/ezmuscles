@@ -85,16 +85,16 @@ class NavBar extends Component {
             </li>
             <li className="nav-item">
               <Link to="/support">
-              <a className="nav-link" href="#">
-                Support
+                <a className="nav-link" href="#">
+                  Support
               </a>
               </Link>
             </li>
 
             <li className="nav-item">
               <Link to="/senddiscount">
-              <a className="nav-link" href="#">
-                Get Discount Code
+                <a className="nav-link" href="#">
+                  Get Discount Code
               </a>
               </Link>
             </li>
@@ -114,17 +114,22 @@ class NavBar extends Component {
             </li>
 
             <li className="nav-item">
-            
 
-
-            <Link to="/cart">
-              <a className="nav-link" href="#">
-              <i className="fa fa-shopping-basket" aria-hidden="true"> Your Cart
+              <Link to="/cart">
+                <a className="nav-link" href="#">
+                  <i className="fa fa-shopping-basket" aria-hidden="true"> Your Cart
             </i>
-              </a>
+                </a>
               </Link>
             </li>
-            
+            <li className="nav-item">
+
+              <Link to="/admin">
+                <a className="nav-link" href="#"> Admin
+                </a>
+              </Link>
+            </li>
+
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input
