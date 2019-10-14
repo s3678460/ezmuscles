@@ -43,7 +43,7 @@ class NavBar extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Link to="/">
           <a className="navbar-brand" href="#">
             <img
@@ -79,9 +79,11 @@ class NavBar extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Products
-              </a>
+              <Link
+                className="nav-link"
+                to="/product">
+                Product
+              </Link>
             </li>
             <li className="nav-item">
               <Link to="/support">
