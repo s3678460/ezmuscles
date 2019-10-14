@@ -17,7 +17,7 @@ import Chatbot from "./components/Chatbot/Chatbot";
 import SendDiscountCode from "./components/SendDiscountCode/SendDiscountCode";
 import Cart from "./components/Cart/Cart";
 import AdminPage from "./components/Admin/AdminPage";
-import { UpdateProduct } from "./components/Admin/UpdateProduct";
+import UpdateProduct from "./components/Admin/UpdateProduct";
 
 
 //Check for token

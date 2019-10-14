@@ -8,8 +8,7 @@ import {
 
 
 const initialState = {
-    products: [],
-    product: []
+    products: []
 };
 
 export default function (state = initialState, action) {
@@ -22,7 +21,7 @@ export default function (state = initialState, action) {
         case GET_PRODUCT:
             return {
                 ...state,
-                product: action.payload
+                products: action.payload
             };
         case DELETE_PRODUCT:
             return {

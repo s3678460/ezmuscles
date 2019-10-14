@@ -94,9 +94,38 @@ router.delete(`/:id`, (req, res) => {
 //@route Public
 router.put("/:id", (req, res) => {
     var updatedPro = req.body
-    Product.findByIdAndUpdate(req.params.id, updatedPro)
-        .then(() => res.json({ update: "Success" }))
-        .catch(err => res.status(404).json({ update: "Fail" }))
+    if (updatedPro.imageURL) {
+        Product.findByIdAndUpdate(req.params.id, updatedPro)
+            .then(() => res.json({ update: "Success" }))
+            .catch(err => res.status(404).json({ update: "Fail" }))
+    } else {
+        const imageContent = fs.readFileSync(`./upload/${updatedPro.filename}`)
+        //setting up S3 upload parameters
+        const params = {
+            Bucket: "ezmuscles",
+            Key: updatedPro.filename + updatedPro.originalname,
+            Body: imageContent
+        }
+        // // Uploading files to the bucket
+        s3.upload(params, (err, data) => {
+            if (err) {
+                console.log(err)
+            }
+            fs.unlinkSync(`./upload/${updatedPro.filename}`)
+        })
+        const updatedProduct = {
+            name: updatedPro.name,
+            price: updatedPro.price,
+            category: updatedPro.category,
+            description: updatedPro.description,
+            quantity: updatedPro.quantity,
+            imageURL: updatedPro.filename + updatedPro.originalname
+        }
+        Product.findByIdAndUpdate(req.params.id, updatedProduct)
+            .then(() => res.json({ update: "Success" }))
+            .catch(err => res.status(404).json({ update: "Fail" }))
+    }
+
 })
 
 //@route GET api/products
@@ -105,6 +134,7 @@ router.put("/:id", (req, res) => {
 router.get(`/:id`, (req, res) => {
     Product.findById(req.params.id)
         .then(product => {
+            console.log(product)
             res.json(product)
         })
         .catch(err => res.status(404).json({ Get: "Fail" }))

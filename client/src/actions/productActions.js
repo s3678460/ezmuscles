@@ -60,15 +60,23 @@ export const addProduct = (newProduct) => dispatch => {
 
 }
 export const updateProduct = (id, updatedProduct) => dispatch => {
-    axios
-        .put(`/api/product/${id}`, updatedProduct)
-        .then(res => dispatch({
-            type: UPDATE_PRODUCT,
-            payload: res.data
-        }))
-        .then(res => dispatch(getProducts()))
-        .catch(err => dispatch({
-            type: GET_ERRORS,
-            payload: err.response.data
-        }))
+    return new Promise((resolve, reject) => {
+        axios
+            .put(`/api/products/${id}`, updatedProduct)
+            .then(res => {
+                dispatch({
+                    type: UPDATE_PRODUCT,
+                    payload: res.data
+                })
+                resolve(true)
+            })
+            .then(res => dispatch(getProducts()))
+            .catch(err => {
+                dispatch({
+                    type: GET_ERRORS,
+                    payload: err.response.data
+                })
+                resolve(false)
+            })
+    })
 }
