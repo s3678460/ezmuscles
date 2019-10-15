@@ -10,11 +10,37 @@ class NavBar extends Component {
     this.props.logoutUser();
   }
 
+  
+
   render() {
     const { isAuthenticated, user } = this.props.auth;
+    
+    
+    const authAdminLinks = (
+        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a className="dropdown-item" href="">
+          Welcome back, {user.name}!
+        </a>
+
+        <a
+          className="dropdown-item"
+          href="#"
+          onClick={this.onLogoutClick.bind(this)}
+        >
+          Logout
+        </a>
+
+      <Link to="/admin"><a className="dropdown-item">Admin</a></Link>
+
+        <div className="dropdown-divider" />
+      </div>
+     
+      
+    )
 
     const authLinks = (
-      <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+      
+        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
         <a className="dropdown-item" href="">
           Welcome back, {user.name}!
         </a>
@@ -28,7 +54,16 @@ class NavBar extends Component {
         </a>
         <div className="dropdown-divider" />
       </div>
+      
+      
+      
     );
+      var link ;
+    if (user.name == "Minh Huynh") {
+      link = authAdminLinks
+    } else {
+      link = authLinks
+    }
 
     const guestLinks = (
       <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -112,26 +147,14 @@ class NavBar extends Component {
               >
                 Membership
               </a>
-              {isAuthenticated ? authLinks : guestLinks}
+              {isAuthenticated ? link : guestLinks}
             </li>
 
             <li className="nav-item">
 
-              <Link to="/cart">
-                <a className="nav-link" href="#">
-                  <i className="fa fa-shopping-basket" aria-hidden="true"> Your Cart
-            </i>
-                </a>
-              </Link>
+             
             </li>
-            <li className="nav-item">
-
-              <Link to="/admin">
-                <a className="nav-link" href="#"> Admin
-                </a>
-              </Link>
-            </li>
-
+            
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input

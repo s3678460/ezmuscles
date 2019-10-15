@@ -5,6 +5,7 @@ const passport = require('passport')
 const users = require('./routes/api/users');
 const products = require('./routes/api/products');
 const contacts = require('./routes/api/contacts')
+const purchases = require('./routes/api/purchases')
 
 
 const app = express();
@@ -37,6 +38,7 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 app.use('/api/products', products);
 app.use('/api/contacts',contacts);
+app.use('/api/purchases',purchases);
 
 
 

@@ -29,14 +29,14 @@ router.post("/postContact", (req, res) => {
     .then(contact => res.json(contact))
     .catch(err => console.log(err));
   fs.appendFile(
-    "/Users/huynhcongminh/Desktop/CloudComputing/ezmuscles/client/src/components/Chatbot/contact.txt",
+    "client/src/components/Chatbot/contact.txt",
     data,
     err => {
       if (err) console.log(err);
       console.log("Write File Succesfull");
       var s3 = new AWS.S3();
       var filePath =
-        "/Users/huynhcongminh/Desktop/CloudComputing/ezmuscles/client/src/components/Chatbot/contact.txt";
+        "client/src/components/Chatbot/contact.txt";
 
       var params = {
         Bucket: "ezmusclespt",

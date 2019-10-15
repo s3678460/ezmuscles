@@ -1,0 +1,111 @@
+.order-box1{
+    margin-left: 10%;
+    margin-right: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    overflow: auto;
+    
+}
+
+.order-box1 h1{
+    font-size: 1.75rem;
+    color: #333;
+    font-family: iStock Maquette, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 20px;overflow: auto;
+
+    
+} 
+
+.checkout-box{
+    border: 1px solid #ccd3d3;
+    background: #F4F6F6;
+    box-shadow: inset 0 2px 0 0 white;
+    overflow: auto;
+
+}
+
+.checkout-box form{
+    
+    margin-top: 5%;
+    margin-left: 5%;
+    overflow: auto;
+}
+
+.checkout-box h2{
+    font-size: 1.3125rem;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.form-checkout input{
+    display:block;
+    width:400px;
+    margin:20px  ;
+    margin-left: 0;
+    padding:15px;
+    background:white;
+    
+    border: 2px #FFD900 solid;
+}
+
+.form-checkout input:focus,.box input:active,.box button:focus,.box button:active{
+    outline:none;
+  }
+
+  .total h2{
+    border-top: 1px solid #ccd3d3;
+    box-shadow: inset 0 2px 0 0 white;
+    padding-top: 25px;
+    font-size: 15pt;
+}
+
+.total b{
+    font-size: 20pt;
+}
+
+.form-checkout button{
+    background-color: #02a388;
+    border: 1px solid #02937a;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 2px 0 rgba(255,255,255,0.5);
+    box-shadow: inset 0 0 2px 0 rgba(255,255,255,0.5);
+    color: white;
+    cursor: pointer;
+    padding:10px;
+    font-size:20px;
+    width:330px;
+    margin-bottom: 5%;
+    display:block;
+    cursor:pointer;
+    overflow: hidden;
+    align-self: left;
+  }
+
+  .form-checkout button:hover{
+      background:darkseagreen;
+  }
+  .form-checkout button:active{
+    background:lightseagreen;
+  }
+
+  .summary-image{
+      max-width:100%;
+      min-width: 100%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      background-size: auto;
+      object-fit: cover;
+      display: block;
+     
+  }
+
+  .checkout-box-2{
+    border-top: 1px solid #ccd3d3;
+    border-bottom: 1px solid #ccd3d3;
+    
+    
+
+}
+

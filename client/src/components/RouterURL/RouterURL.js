@@ -10,6 +10,7 @@ import Cart from '../Cart/Cart';
 import AdminPage from '../Admin/AdminPage';
 import UpdateProduct from '../Admin/UpdateProduct';
 import ProductPage from '../Product/ProductPage';
+import Purchase from '../PurchasePage/Purchase'
 
 export class RouterURL extends Component {
     render() {
@@ -26,6 +27,8 @@ export class RouterURL extends Component {
                     <Route path="/admin" component={AdminPage} />
                     <Route path="/product/:_id" component={UpdateProduct} />
                     <Route path="/product" component={ProductPage} />
+                    <Route path="/purchase/:_id" component={Purchase} />
+
                     <Route component={ReactApp} />
                 </Switch>
             </div>
