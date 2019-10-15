@@ -6,6 +6,7 @@ const users = require('./routes/api/users');
 const products = require('./routes/api/products');
 const contacts = require('./routes/api/contacts')
 const purchases = require('./routes/api/purchases')
+const path = require("path");
 
 
 const app = express();
