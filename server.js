@@ -37,9 +37,17 @@ require('./config/passport')(passport);
 // Use Routes
 app.use('/api/users', users);
 app.use('/api/products', products);
-app.use('/api/contacts',contacts);
-app.use('/api/purchases',purchases);
+app.use('/api/contacts', contacts);
+app.use('/api/purchases', purchases);
 
+
+// Serve static assets if in production
+
+app.use(express.static(path.join(__dirname, "client/build")));
+
+app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 
 const port = process.env.PORT || 5000;
