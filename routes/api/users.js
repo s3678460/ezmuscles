@@ -57,7 +57,7 @@ router.post("/register", (req, res) => {
       Token: <b>${secretToken}<b/>
       <br/>
       On the following page:
-      <a href="https://theezmuscle.com/verify">https://theezmuscle.com/verify</a>
+      <a href="http://www.theezmuscle.com/verify">https://theezmuscle.com/verify</a>
       <br/>
       <br/>
       Have a good day!
