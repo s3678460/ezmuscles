@@ -1,0 +1,19 @@
+{
+	"ProjectName": "client",
+	"ProjectPath": "/Users/huynhcongminh/Desktop/CloudComputing/ezmuscles/client",
+	"InitializationTime": "2019-10-02-16-21-30",
+	"LastConfigurationTime": "2019-10-02-16-21-15",
+	"LastNPMInstallTime": "",
+	"FrontendLastBuildTime": "",
+	"LastPublishTime": "",
+	"BackendLastSyncTime": "2019-10-02-17-49-23",
+	"BackendLastBuildTime": "2019-10-02-16-22-07",
+	"BackendLastPushTime": "2019-10-02-16-22-23",
+	"BackendProjectID": "372ecd70-99b5-462c-9d12-188b938c6dd4",
+	"BackendProjectName": "client-2019-10-02-16-21-15",
+	"BackendProjectConsoleUrl": "https://console.aws.amazon.com/mobilehub/home#/372ecd70-99b5-462c-9d12-188b938c6dd4/build",
+	"BackendProjectCreationTime": "2019-10-02T06:21:17.374Z",
+	"BackendProjectLastUpdatedTime": "2019-10-02T07:47:41.171Z",
+	"Framework": "react",
+	"BackendLastSyncToDevTime": "2019-10-02-17-49-29"
+}

@@ -1,0 +1,224 @@
+{
+	"name": "client-2019-10-02-16-21-15",
+	"projectId": "372ecd70-99b5-462c-9d12-188b938c6dd4",
+	"region": "us-east-1",
+	"state": "NORMAL",
+	"createdDate": "2019-10-02T06:21:17.374Z",
+	"lastUpdatedDate": "2019-10-02T07:47:41.171Z",
+	"consoleUrl": "https://console.aws.amazon.com/mobilehub/home#/372ecd70-99b5-462c-9d12-188b938c6dd4/build",
+	"resources": [
+		{
+			"type": "AWS::IAM::Role",
+			"name": "AWSServiceRoleForLexBots",
+			"arn": "arn:aws:iam::465860107029:role/aws-service-role/lex.amazonaws.com/AWSServiceRoleForLexBots",
+			"feature": "bots",
+			"attributes": {
+				"bots-role-key": "bots-execution-role",
+				"lastUpdateRequestID": "8d7f1985-adc3-4761-9fdb-b4fbd089f5ba"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "client_bots_MOBILEHUB_788760167",
+			"arn": null,
+			"feature": "bots",
+			"attributes": {
+				"authType": "authenticated",
+				"lastUpdateRequestID": "d9c0b5dd-9677-4a9c-9a0b-0c5dc405b47d",
+				"role": "client_auth_MOBILEHUB_788760167"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "client_bots_MOBILEHUB_788760167",
+			"arn": null,
+			"feature": "bots",
+			"attributes": {
+				"authType": "unauthenticated",
+				"lastUpdateRequestID": "d9c0b5dd-9677-4a9c-9a0b-0c5dc405b47d",
+				"role": "client_unauth_MOBILEHUB_788760167"
+			}
+		},
+		{
+			"type": "AWS::Lex::Bot",
+			"name": "EzMuscles",
+			"arn": "EzMuscles",
+			"feature": "bots",
+			"attributes": {
+				"description": "",
+				"lastUpdateRequestID": "d9c0b5dd-9677-4a9c-9a0b-0c5dc405b47d",
+				"originalName": "EzMuscles",
+				"region": "us-east-1",
+				"template": "bot-import"
+			}
+		},
+		{
+			"type": "AWS::Lex::Bot",
+			"name": "BookTripBotMOBILEHUB",
+			"arn": "BookTripBotMOBILEHUB",
+			"feature": "bots",
+			"attributes": {
+				"childDirected": "true",
+				"description": "Bot to make reservations for a visit to a city.",
+				"lastUpdateRequestID": "d9c0b5dd-9677-4a9c-9a0b-0c5dc405b47d",
+				"originalName": "BookTripBot",
+				"region": "us-east-1",
+				"template": "bot-trips"
+			}
+		},
+		{
+			"type": "AWS::Cognito::IdentityPool",
+			"name": "client_MOBILEHUB_788760167",
+			"arn": "us-east-1:bdacabcc-31a0-457b-8783-a1af2c8c88bb",
+			"feature": "user-signin",
+			"attributes": {
+				"lastUpdateRequestID": "451d057b-0c28-4eef-8a3a-4aa46846d98a",
+				"poolid": "us-east-1:bdacabcc-31a0-457b-8783-a1af2c8c88bb",
+				"roleARNs": "arn:aws:iam::465860107029:role/client_auth_MOBILEHUB_788760167,arn:aws:iam::465860107029:role/client_unauth_MOBILEHUB_788760167"
+			}
+		},
+		{
+			"type": "AWS::IAM::Role",
+			"name": "client_smsverification_MOBILEHUB_788760167",
+			"arn": "arn:aws:iam::465860107029:role/service-role/client_smsverification_MOBILEHUB_788760167",
+			"feature": "user-signin",
+			"attributes": {
+				"lastUpdateRequestID": "451d057b-0c28-4eef-8a3a-4aa46846d98a",
+				"user-pools-role-key": "user-pools-execution-role"
+			}
+		},
+		{
+			"type": "AWS::Cognito::UserPool",
+			"name": "client_userpool_MOBILEHUB_788760167",
+			"arn": "us-east-1_ry3rkII8Z",
+			"feature": "user-signin",
+			"attributes": {
+				"alias-attributes": "[\"email\",\"phone_number\"]",
+				"lastUpdateRequestID": "451d057b-0c28-4eef-8a3a-4aa46846d98a",
+				"mfa-configuration": "ON",
+				"password-policy": "{\"minimumLength\":8,\"requireUppercase\":true,\"requireLowercase\":true,\"requireNumbers\":true,\"requireSymbols\":true,\"temporaryPasswordValidityDays\":7}",
+				"region": "us-east-1",
+				"user-pools-client-id": "41l7s92p7fo1scm04l7btfofk9",
+				"user-pools-client-secret": "1dokr6953ardhrh25001fon0qjpct9uv38ct358mm33h3cju2hp",
+				"user-pools-id": "us-east-1_ry3rkII8Z",
+				"user-pools-web-client-id": "5a7buitfof515d79btjjdqm605"
+			}
+		},
+		{
+			"type": "AWS::IAM::Role",
+			"name": "client_auth_MOBILEHUB_788760167",
+			"arn": "arn:aws:iam::465860107029:role/client_auth_MOBILEHUB_788760167",
+			"feature": "user-signin",
+			"attributes": {
+				"authType": "authenticated",
+				"lastUpdateRequestID": "451d057b-0c28-4eef-8a3a-4aa46846d98a"
+			}
+		},
+		{
+			"type": "AWS::IAM::Role",
+			"name": "client_unauth_MOBILEHUB_788760167",
+			"arn": "arn:aws:iam::465860107029:role/client_unauth_MOBILEHUB_788760167",
+			"feature": "user-signin",
+			"attributes": {
+				"authType": "unauthenticated",
+				"lastUpdateRequestID": "65e40e74-d89b-480f-95f0-d58d84cdabe7"
+			}
+		},
+		{
+			"type": "AWS::Pinpoint::AnalyticsApplication",
+			"name": "client20191002162115_MobileHub",
+			"arn": "45750ec649114a4b908232bbfc16bbf6",
+			"feature": "analytics",
+			"attributes": {
+				"lastUpdateRequestID": "65e40e74-d89b-480f-95f0-d58d84cdabe7"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "client_mobileanalytics_MOBILEHUB_788760167",
+			"arn": null,
+			"feature": "analytics",
+			"attributes": {
+				"authType": "authenticated",
+				"lastUpdateRequestID": "d9c0b5dd-9677-4a9c-9a0b-0c5dc405b47d",
+				"role": "client_auth_MOBILEHUB_788760167"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "client_mobileanalytics_MOBILEHUB_788760167",
+			"arn": null,
+			"feature": "analytics",
+			"attributes": {
+				"authType": "unauthenticated",
+				"lastUpdateRequestID": "d9c0b5dd-9677-4a9c-9a0b-0c5dc405b47d",
+				"role": "client_unauth_MOBILEHUB_788760167"
+			}
+		},
+		{
+			"type": "AWS::S3::Bucket",
+			"name": "client-hosting-mobilehub-788760167",
+			"arn": null,
+			"feature": "hosting",
+			"attributes": {
+				"lastUpdateRequestID": "65e40e74-d89b-480f-95f0-d58d84cdabe7",
+				"region": "us-east-1",
+				"s3-bucket-console-url": "https://s3.console.aws.amazon.com/s3/buckets/client-hosting-mobilehub-788760167",
+				"s3-bucket-website-url": "https://s3.amazonaws.com/client-hosting-mobilehub-788760167"
+			}
+		},
+		{
+			"type": "AWS::CloudFront::Distribution",
+			"name": "d14512fesvowgy.cloudfront.net",
+			"arn": null,
+			"feature": "hosting",
+			"attributes": {
+				"id": "EWN6GSO873YES",
+				"lastUpdateRequestID": "65e40e74-d89b-480f-95f0-d58d84cdabe7"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "client_hosting_MOBILEHUB_788760167",
+			"arn": null,
+			"feature": "hosting",
+			"attributes": {
+				"authType": "authenticated",
+				"lastUpdateRequestID": "d9c0b5dd-9677-4a9c-9a0b-0c5dc405b47d",
+				"role": "client_auth_MOBILEHUB_788760167"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "client_hosting_MOBILEHUB_788760167",
+			"arn": null,
+			"feature": "hosting",
+			"attributes": {
+				"authType": "unauthenticated",
+				"lastUpdateRequestID": "d9c0b5dd-9677-4a9c-9a0b-0c5dc405b47d",
+				"role": "client_unauth_MOBILEHUB_788760167"
+			}
+		},
+		{
+			"type": "AWS::S3::Bucket",
+			"name": "client-deployments-mobilehub-788760167",
+			"arn": null,
+			"feature": "common",
+			"attributes": {
+				"region": "us-east-1",
+				"s3-bucket-console-url": "https://s3.console.aws.amazon.com/s3/buckets/client-deployments-mobilehub-788760167"
+			}
+		},
+		{
+			"type": "AWS::CloudFormation::Stack",
+			"name": "Development",
+			"arn": null,
+			"feature": "cloud-api",
+			"attributes": {
+				"primary": "true",
+				"region": "us-east-1",
+				"stateSummary": "NOT_YET_DEPLOYED"
+			}
+		}
+	]
+}
