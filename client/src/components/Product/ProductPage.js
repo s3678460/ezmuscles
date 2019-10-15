@@ -7,14 +7,29 @@ export class ProductPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            searchByKey: ""
         }
     }
     componentDidMount() {
         this.props.getProducts()
     }
+    onChange = (e) => {
+        var target = e.target;
+        var name = target.name;
+        var value = target.value;
+        this.setState({
+            [name]: value
+        })
+    }
+    closeSearch = (e) => {
+        this.setState({ searchByKey: "" })
+    }
     render() {
         var { products } = this.props.products
+        //check search by key
+        products = products.filter((product) => {
+            return product.name.toLowerCase().indexOf(this.state.searchByKey.toLowerCase()) !== -1
+        })
         //render list products
         var listProducts = products.map((product, index) => {
             return <div key={index} className="row pt-4">
@@ -55,8 +70,36 @@ export class ProductPage extends Component {
             </div>
         })
         return (
-            <div>
-                {listProducts}
+            <div className="pt-5">
+                <div className="container">
+                    <div>
+                        <button
+                            onClick={this.closeSearch}
+                            className="btn btn-primary"
+                            type="button" data-toggle="collapse"
+                            data-target="#collapseExample"
+                            aria-expanded="false"
+                            aria-controls="collapseExample">
+                            Search
+                    </button>
+                    </div>
+                    <div className="collapse" id="collapseExample">
+                        <div className="card card-body">
+                            <input
+                                value={this.state.searchByKey}
+                                name="searchByKey"
+                                onChange={this.onChange}
+                                className="form-control mr-sm-2"
+                                type="search"
+                                placeholder="Search by name"
+                                aria-label="Search"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="container">
+                    {listProducts}
+                </div>
             </div>
         )
     }
