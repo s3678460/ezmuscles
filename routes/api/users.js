@@ -6,9 +6,12 @@ const key = require("../../config/keys");
 const passport = require("passport");
 const randomstring = require("randomstring");
 const joi = require("joi");
+
+
 const mailer = require("../misc/mailer");
-const accountSid = 'AC763cfe4f372695320e25d26cf50f2054';
-const authToken = 'e51aa152e751737be6469783aa81b993';
+
+const accountSid = '';
+const authToken = '';
 const client = require('twilio')(accountSid, authToken);
 
 // Load User Model

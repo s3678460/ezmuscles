@@ -7,8 +7,8 @@ const fs = require("fs")
 const axios = require("axios")
 
 //connect s3 bucket
-const ID = 'AKIAJ2YUN7DMX4WYKKZA';
-const SECRET = `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`;
+const ID = '';
+const SECRET = `b+`;
 const s3 = new AWS.S3({
     accessKeyId: ID,
     secretAccessKey: SECRET
