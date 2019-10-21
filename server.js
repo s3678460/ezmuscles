@@ -41,23 +41,13 @@ app.use('/api/contacts', contacts);
 app.use('/api/purchases', purchases);
 
 // Server static assets if in production
-if(process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
     // set static folder
     app.use(express.static('client/build'))
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client','build','index.html'))
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
 }
-
-
-// Serve static assets if in production
-
-app.use(express.static(path.join(__dirname, "client/build")));
-
-app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
-
 
 const port = process.env.PORT || 5000;
 
