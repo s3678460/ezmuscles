@@ -5,8 +5,8 @@ const AWS = require("aws-sdk");
 const path = require("path");
 
 AWS.config.update({
-  accessKeyId: "AKIAJ2YUN7DMX4WYKKZA",
-  secretAccessKey: "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"
+  accessKeyId: "",
+  secretAccessKey: ""
 });
 
 const Contact = require("../../models/Contact");
